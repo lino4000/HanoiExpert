@@ -1,0 +1,23 @@
+@relation vendas
+
+@attribute sexo {F,M}
+@attribute idade {20-39,>=40}
+@attribute filhos {N,S}
+@attribute gasta_muito {N,S}
+
+@data
+F,>=40,N,N
+F,20-39,S,S
+F,>=40,N,S
+M,20-39,N,S
+F,>=40,S,S
+M,20-39,S,N
+F,>=40,N,N
+F,>=40,N,S
+M,>=40,S,N
+M,20-39,S,N
+F,>=40,S,N
+F,20-39,S,N
+F,20-39,S,N
+F,20-39,N,S
+F,20-39,N,S
