@@ -5,21 +5,86 @@
  */
 package control;
 
-import java.util.ArrayList;
-import java.util.List;
+import model.GameRulles;
+import view.Out;
 
 /**
  *
  * @author lino4000
  */
-public class GameControl implements Runnable {
-    private final List<List<Integer>> pillars;
-    private final List<Integer> peaces;
-    private Integer to;
+public class GameControl{
+    private final Out show;
+    private final GameRulles game;
+    private Integer state;
     
-    public GameControl(Integer pillars, Integer peaces){
-        this.pillars = new ArrayList<>();
-        this.peaces = new ArrayList<>();
+    public GameControl() {
+        this.show = new Out();
+        this.game = new GameRulles();
+        this.state = 0;
+    }
+    
+    public void update(String input){
+        switch(this.state){
+            case 0:{
+//                Integer choose = Integer.parseInt(input);
+                switch(input){
+                    case "1":{
+                        this.state = 1;
+                        game.start();
+                        break;
+                    }
+                    case "2":{
+
+                    }
+                    case "3":{
+
+                    }
+                    case "4":{
+
+                    }
+                    case "5":{
+
+                    }
+                    case "6":{
+                        Hanoi.closeGame();
+                        break;
+                    }
+                }
+                break;
+            }
+            case 1:{
+                break;
+            }
+            case 2:{
+                break;
+            }
+            case 3:{
+                System.out.println("State 3");
+            }
+            case 4:{
+                break;
+            }
+            case 5:{
+                break;
+            }
+            case 6:{
+                break;
+            }
+            case 7:{
+                break;
+            }
+            case 8:{
+            
+            }
+        }
+    }
+
+    public void showMainMenu() {
+        show.mainMenu();
+    }
+    
+/*
+    public void start(Integer pillars, Integer peaces){
         for(Integer i = pillars; i>0; i--){
             this.pillars.add(new ArrayList<>());
         }
@@ -28,30 +93,13 @@ public class GameControl implements Runnable {
         }
 
     }
-    
-    public void start(Integer from, Integer to){
+
+    public void settings(Integer from, Integer to){
         this.to = to - 1;
         peaces.forEach((Integer p) -> {
             GameControl.this.pillars.get(from - 1).add(p);
         });
         this.getPillars();
     }
-    
-    public void move(Integer from, Integer to){
-        this.pillars.get(to).add(
-                this.pillars.get(from).get(this.pillars.get(from).size() -1 )
-        );
-        this.pillars.get(from).remove(this.pillars.get(from).size() -1 );
-        this.getPillars();
-    }
-    
-    public List<List<Integer>> getPillars(){
-        return this.pillars;
-    }
-
-    @Override
-    public void run() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-    
+  */  
 }

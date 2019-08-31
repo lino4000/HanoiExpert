@@ -20,7 +20,7 @@ public class WekaTeste {
 
     /**
      * @param args the command line arguments
-     */
+     *
     public static void main(String[] args) throws Exception{
         GameControl game = new GameControl(3,7);
         game.start(1,3);
@@ -47,6 +47,6 @@ public class WekaTeste {
         
         System.out.println("Sim : " + probabilidade[1]);
         System.out.println("Não : " + probabilidade[0]);
-*/    }
-    
+    }
+*/    
 }
